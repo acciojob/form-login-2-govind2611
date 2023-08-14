@@ -1,16 +1,12 @@
 <!DOCTYPE html>
-
 <html>
 
 <head>
-	<link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-	<!-- the entire body must be written by student -->
-    <script type="text/javascript" src="./script.js">
-</script>
-	<label for="first-name">First Name:</label>
+    <label for="first-name">First Name:</label>
     <input type="text" name="first-name" id="first-name" placeholder="" />
     <br>
     <label for="last-name">Last Name:</label>
@@ -23,6 +19,29 @@
     <input type="text" name="email" id="email" placeholder="" />
     <br>
     <button onclick="submitForm()">Submit</button>
+
+    <script>
+        function submitForm() {
+            const firstName = document.getElementById("first-name").value;
+            const lastName = document.getElementById("last-name").value;
+            const phoneNumber = document.getElementById("phone-number").value;
+            const email = document.getElementById("email").value;
+
+            if (firstName.trim() === "" || lastName.trim() === "" || phoneNumber.trim() === "" || email.trim() === "") {
+                alert("Please fill in all fields.");
+                return;
+            }
+
+            const formInfo = `
+            First Name: ${firstName}
+            Last Name: ${lastName}
+            Phone Number: ${phoneNumber}
+            Email ID: ${email}
+            `;
+
+            alert(formInfo);
+        }
+    </script>
 </body>
 
 </html>
